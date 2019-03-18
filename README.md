@@ -5,7 +5,7 @@ See the API's [documentation](DOCS.md).
 
 # Getting Started
 
-- Navigate to the front-end Angular-app. There you should build the project with `ng build`. Use watch to have live reload `ng build --watch`
+- Navigate to the notes-app Angular-app. There you should build the project with `ng build`. Use watch to have live reload `ng build --watch`
 - The `/dist` will deposit into the nginx folder and be read by nginx when spinning up from the `docker-compose up` command.
 - next the only commands you need enter aftter that should be `docker-compose up`. It will build on the first time.
 - Navigate to `localhost:80` on a chrome browser. 
@@ -36,7 +36,7 @@ You can customize the `src` and `api` directories.
 |
 coverage/
 |
-front-end/
+notes-app/
 | 
 node_modules/
 |
