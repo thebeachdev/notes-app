@@ -1,0 +1,4 @@
+version: '3'
+services:
+  notes_api:
+    command: npm run docker:dev

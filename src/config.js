@@ -31,9 +31,6 @@ const config = {
     apiRoot: process.env.API_ROOT || '/api',
     appTitle: 'Notes API in Dev Mode',
     defaultEmail: 'no-reply@notes.com',
-    sendgridKey: requireProcessEnv('SENDGRID_API_KEY'),
-    masterKey: requireProcessEnv('MASTER_KEY'),
-    jwtSecret: requireProcessEnv('JWT_SECRET'),
     dbOptions: {
       host: 'localhost',
       port: '5432',
@@ -61,9 +58,6 @@ const config = {
     apiRoot: process.env.API_ROOT || '/api',
     appTitle: 'Notes API in Docker Dev Mode',
     defaultEmail: 'no-reply@notes.com',
-    sendgridKey: requireProcessEnv('SENDGRID_API_KEY'),
-    masterKey: requireProcessEnv('MASTER_KEY'),
-    jwtSecret: requireProcessEnv('JWT_SECRET'),
     dbOptions: {
       host: 'postgisDB',
       port: '5432',

@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { create, list, view, edit, destroy } = require('./controller')
+const { create, list, view, update, destroy } = require('./controller')
 
 const router = new Router()
 
@@ -28,6 +28,17 @@ router.post('/', create)
  * @apiError 401 Note access only.
  */
 router.get('/:uuid', view)
+
+/**
+ * @api {put} /dog-parks Create Note
+ * @apiName UpdateNote
+ * @apiGroup Note
+ * @apiSuccess {Object} Note Note's data.
+ * @apiError {Object} 400 Some parameters may contain invalid values.
+ * @apiError 404 Note not found.
+ * @apiError 401 admin access only.
+ */
+router.put('/', update)
 
 /**
  * @api {get} /notes Retrieve a list of notes

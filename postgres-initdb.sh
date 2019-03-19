@@ -1,5 +1,5 @@
 #!/bin/sh -e
 
 psql --username "postgres" <<-EOSQL
-  CREATE DATABASE "NotesDev";
+  CREATE DATABASE "notesDev";
 EOSQL

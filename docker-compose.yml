@@ -43,7 +43,6 @@ services:
     ports:
       - "127.0.0.1:3000:3000"
       - "127.0.0.1:5858:5858" # V8 inspector for tools/run.js
-      - "127.0.0.1:9230:9230" # V8 inspector for src/server.js
     networks:
       - notes_network
   ####################

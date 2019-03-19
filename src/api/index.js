@@ -1,7 +1,5 @@
-const {
-    Router
-} = require('express')
-const note = require('./notes')
+const { Router } = require('express')
+const notes = require('./notes')
 const router = new Router()
 // TODO: Update Docs.
 /**
@@ -27,5 +25,5 @@ const router = new Router()
  * @apiParam {String[]} [sort=-createdAt] Order of returned items.
  * @apiParam {String[]} [fields] Fields to be returned.
  */
-router.use('/notes', note)
+router.use('/notes', notes)
 module.exports = router

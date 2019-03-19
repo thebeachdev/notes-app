@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+// This is the main file which includes all my custom *.scss file
+// used as an entry point, referenced in .angular-cli.json
+//@import "global";
+//@import "variables";
+@import "~bootstrap/scss/bootstrap.scss";
