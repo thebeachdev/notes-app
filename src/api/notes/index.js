@@ -7,7 +7,7 @@ const router = new Router()
  * @api {post} /notes Create Note
  * @apiName CreateNote
  * @apiGroup Note
- * @apiSuccess {Object} 200 Note's data.
+ * @apiSuccess {Object} 200 A string at no more than 140 characters.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Note not found.
  * @apiError 401 admin access only.

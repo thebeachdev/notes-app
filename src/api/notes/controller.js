@@ -100,27 +100,20 @@ module.exports = {
 
   async destroy (req, res, next) {
     let choosenNote
+
     try {
       choosenNote = await Note.findById(req.params.uuid)
       choosenNote.destroy()
-      success(res, 204)
-    } catch (err) {
-      // NOTE: need to record different errors and eventually creat a service for this.
-      if (err.name === `SequelizeValidationError` || err.name === `SequelizeUniqueConstraintError`) {
-        if (err.errors) {
-          err.errors.forEach((entry) => {
-            delete entry.value
-            delete entry.__raw
-            delete entry.path
-          })
-          delete err.fields
-          delete err.parent
-          delete err.original
-          delete err.sql
-        }
-        // TODO: Log error.
-        res.status(422).send(err)
-      }
+      return res.status(200).json({
+        success: true,
+        message: 'The Note has been deleted'
+      })
+    } catch (error) {
+      console.log(error)
+      return res.status(401).json({
+        success: false,
+        error: JSON.stringify(error)
+      }).end()
     }
   }
 }
