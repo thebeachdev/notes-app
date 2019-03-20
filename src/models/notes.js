@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     text: {
       type: DataTypes.STRING,
       validate: {
-        len: [2, 155]
+        len: [0, 140]
       }
     }
   }, {
