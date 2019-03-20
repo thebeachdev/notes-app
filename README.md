@@ -13,11 +13,15 @@ See the API's [documentation](DOCS.md).
 - You should also be able to edit code and see it appear. 
 - If you edit a large amount of changes and make 
 
+## LocalDev Mode
+The backend can run seperate from the front end, you need to have an instance of postgres running.
+The postgres database should be postgres, `notesDev`. the config file contains other details if needed for configuring the database.
+The test run locally, you need to have a `notesTest` added in postgres.
 ### Generate Docs
  To generate current docs to project run `npm run docs`
  
 ### How to run tests.
- To run local system level tests use `npm run local:systemTests`.
+ To run local system level tests use `npm run docker:systemTests`.
 
 ### How to run the project.
 1. In the root of the project directory run in your terminal or IDE use the start script `npm run dev` this will start the api server. The express server will display a port to connect to.
@@ -27,8 +31,6 @@ See the API's [documentation](DOCS.md).
 To get the most recent api docs run `npm run docs` in the root of the project directory.
 
 ## Directory structure
-
-You can customize the `src` and `api` directories.
 
 ```
 .github/

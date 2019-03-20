@@ -7,7 +7,7 @@ module.exports = {
       allowNull: false,
       unique: true
     },
-    firstName: {
+    text: {
       type: Sequelize.STRING
     },
     createdAt: {

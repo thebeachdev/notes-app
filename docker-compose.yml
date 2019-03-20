@@ -32,31 +32,31 @@ services:
     container_name: notes_api
     image: notes_api
     links:
-      - postgisDB
+      - postgresDB
     volumes:
       - ./:/opt/notes_api
       - notes_data:/opt/notes_api/node_modules
     env_file: 
       - ./.env  
     depends_on:
-      - postgisDB
+      - postgresDB
     ports:
       - "127.0.0.1:3000:3000"
       - "127.0.0.1:5858:5858" # V8 inspector for tools/run.js
     networks:
       - notes_network
   ####################
-  # POSTGIS
+  # POSTGRES
   ####################
-  postgisDB:
-    image: mdillon/postgis
+  postgresDB:
+    image: postgres
     restart: always
-    container_name: notes_postgisDB
+    container_name: notes_postgresDB
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: notesDev
     volumes:
-      - postgis_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
       - ./postgres-initdb.sh:/docker-entrypoint-initdb.d/initdb.sh
     ports:
       - "127.0.0.1:5432:5432" # you can override it via docker-compose.override.yml
@@ -68,5 +68,5 @@ networks:
 
 volumes:
   notes_data:
-  postgis_data:
+  postgres_data:
   nginx_data:

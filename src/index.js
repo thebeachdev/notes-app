@@ -16,12 +16,12 @@ setImmediate(() => {
       server.listen(expressPort, expressHost, () => {
         if ((env === 'localDev') || (env === 'dockerDev')) {
           const server = (`${process.env.NODE_ENV === 'secure' ? 'https://' : 'http://'}${expressHost}:${expressPort}`)
-          const postgisDB = (`${dialect}://${username}@${host}:${port}/${database}`)
+          const postgresDB = (`${dialect}://${username}@${host}:${port}/${database}`)
           console.log('--')
           console.log(chalk.green(appTitle))
           console.log(chalk.green(`Enviornment:   ${env}`))
           console.log(chalk.green(`Server:        ${server}`))
-          console.log(chalk.green(`Database:      ${postgisDB}`))
+          console.log(chalk.green(`Database:      ${postgresDB}`))
         }
       })
     })

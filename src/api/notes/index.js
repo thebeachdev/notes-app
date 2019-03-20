@@ -4,10 +4,10 @@ const { create, list, view, update, destroy } = require('./controller')
 const router = new Router()
 
 /**
- * @api {post} /dog-parks Create Note
+ * @api {post} /notes Create Note
  * @apiName CreateNote
  * @apiGroup Note
- * @apiSuccess {Object} Note Note's data.
+ * @apiSuccess {Object} 200 Note's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Note not found.
  * @apiError 401 admin access only.
@@ -16,12 +16,12 @@ router.post('/', create)
 
 /**
  *
- * @api {get} /dog-parks/:uuid Retrieve a Note's Profile.
+ * @api {get} /notes/:uuid Retrieve a Note's Profile.
  * @apiName RetrieveNote
  * @apiGroup Note
  * @apiPermission verifiedUser
  * @apiParam {String} access_token verifiedUser token.
- * @apiSuccess {Object} Note Note's profile data.
+ * @apiSuccess {Object} 200 Note's profile data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Notes not found.
  *
@@ -30,10 +30,10 @@ router.post('/', create)
 router.get('/:uuid', view)
 
 /**
- * @api {put} /dog-parks Create Note
+ * @api {put} /notes Create Note
  * @apiName UpdateNote
  * @apiGroup Note
- * @apiSuccess {Object} Note Note's data.
+ * @apiSuccess {Object} 200 Note's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Note not found.
  * @apiError 401 admin access only.

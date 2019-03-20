@@ -47,7 +47,7 @@ const config = {
   dockerDev: {
     env: process.env.NODE_ENV || 'dockerDev',
     root: path.join(__dirname, '..'),
-    host: 'postgisDB',
+    host: 'notes_postgresDB',
     expressHost: 'notes_api',
     port: '5432',
     expressPort: '3000',
@@ -59,7 +59,7 @@ const config = {
     appTitle: 'Notes API in Docker Dev Mode',
     defaultEmail: 'no-reply@notes.com',
     dbOptions: {
-      host: 'postgisDB',
+      host: 'notes_postgresDB',
       port: '5432',
       force: true,
       dialect: 'postgresql',
