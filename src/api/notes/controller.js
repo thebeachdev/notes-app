@@ -5,6 +5,7 @@ module.exports = {
 
   async create ({ body }, res, next) {
     const noteString = body.text
+    const validNoteString = noteString.length <= 140
     // const validNoteString = // validate string length less than 140. less than or equal to 140
     if (noteString && validNoteString) {
       try {
@@ -23,7 +24,7 @@ module.exports = {
         }).end()
       }
     } else {
-      return res.status(400).json({
+      return res.status(401).json({
         success: false,
         message: 'Note is more than 140 characters long.'
       }).end()
@@ -47,7 +48,7 @@ module.exports = {
         }).end()
       }
     } else {
-      return res.status(400).json({
+      return res.status(401).json({
         success: false,
         message: 'Invalid UUID'
       }).end()
@@ -84,13 +85,13 @@ module.exports = {
         })
       } catch (error) {
         console.log(error)
-        return res.status(400).json({
+        return res.status(401).json({
           success: false,
           error: JSON.stringify(error)
         }).end()
       }
     } else {
-      return res.status(400).json({
+      return res.status(401).json({
         success: false,
         message: 'Invalid UUID'
       }).end()
