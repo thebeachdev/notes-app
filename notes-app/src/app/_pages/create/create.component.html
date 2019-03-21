@@ -1,3 +1,10 @@
-<p>
-  create works!
-</p>
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Create Note</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="textField">Notes:</label>
+      <input type="text" formControlName="textField" placeholder="A string no more than 140 characters" name="textField" class="form-control" id="textField">
+    </div>
+    <button class="btn btn-success">Submit</button>
+  </form>
+</div>

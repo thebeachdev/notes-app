@@ -1,3 +1,10 @@
-<p>
-  update works!
-</p>
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Edit Note</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="textField">Note:</label>
+      <input formControlName="textField" placeholder="Enter some text under 140 characters" name="textField" class="form-control" id="textField">
+    </div>
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>

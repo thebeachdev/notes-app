@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// @ts-ignore
-import { Note } from '@app/_models';
 import {Observable} from "rxjs";
+import {ApiResponse} from "@app/_models/api-response.model";
+import {Note} from "@app/_models";
 
 
 @Injectable({
@@ -11,19 +11,26 @@ import {Observable} from "rxjs";
 export class NoteService {
 
   constructor(private http: HttpClient) { }
+
   baseUrl: string = 'http://localhost:3000/api/notes/';
 
-  getNotesList() : Observable<Note> {
-    return this.http.get<Note>(thi.baseUrl);
-  }
-  getNoteById(uuid: string): Observable<Note> {
-    return this.http.get<Note>(this.baseUrl + uuid);
-  }
-  updateNote(note: Note): Observable<Note> {
-    return this.http.put<Note>(this.baseUrl+note.uuid, note);
+  getNotesList() : Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl);
   }
 
-  deleteUser(uuid: string): Observable<Note> {
-    return this.http.delete<Note>(this.baseUrl + uuid);
+  getNoteById(uuid: string): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl + uuid);
+  }
+
+  createNote(note: Note): Observable<ApiResponse> {
+    return this.http.post<ApiResponse>(this.baseUrl, note);
+  }
+
+  updateNote(note: Note): Observable<ApiResponse> {
+    return this.http.put<ApiResponse>(this.baseUrl+note.uuid, note);
+  }
+
+  deleteNote(uuid: string): Observable<ApiResponse> {
+    return this.http.delete<ApiResponse>(this.baseUrl + uuid);
   }
 }

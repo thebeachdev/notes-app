@@ -38,7 +38,7 @@ router.get('/:uuid', view)
  * @apiError 404 Note not found.
  * @apiError 401 admin access only.
  */
-router.put('/', update)
+router.put('/:uuid', update)
 
 /**
  * @api {get} /notes Retrieve a list of notes

@@ -1,10 +1,9 @@
 // const _ = require('lodash')
-const { success, notFound } = require('../../services/response/')
 const Note = require('../../models').Note
 module.exports = {
 
   async create ({ body }, res, next) {
-    const noteString = body.text
+    const noteString = body.textField
     const validNoteString = noteString.length <= 140
     // const validNoteString = // validate string length less than 140. less than or equal to 140
     if (noteString && validNoteString) {
@@ -14,7 +13,7 @@ module.exports = {
         })
         return res.status(201).json({
           success: true,
-          message: 'You successfully created a note!'
+          result: 'You successfully created a note!'
         }).end()
       } catch (error) {
         console.log(error)
@@ -35,10 +34,10 @@ module.exports = {
     if (req.params.uuid) {
       try {
         // return read only data defined in model
-        const noteModel = await Note.findById(req.params.id)
+        const noteModel = await Note.findById(req.params.uuid)
         return res.status(200).json({
           success: true,
-          note: noteModel.view()
+          result: noteModel.view()
         })
       } catch (error) {
         console.log(error)
@@ -61,7 +60,7 @@ module.exports = {
       // TODO: map to json something
       return res.status(200).json({
         success: true,
-        note: arrayOfNoteModels
+        result: arrayOfNoteModels
       })
     } catch (error) {
       console.log(error)
@@ -71,23 +70,28 @@ module.exports = {
 
   async update (req, res, next) {
     const validUUID = req.params.uuid
-    if (validUUID) {
+    const noteString = req.body.textField
+    const validNoteString = noteString.length <= 140
+
+    if (validUUID && validNoteString) {
       try {
-        const noteModel = await Note.upsert({
-          id: req.params.id,
-          text: req.body.text
-        }, {
-          return: true // return updated model to display
-        })
+        await Note.update(
+          {
+            text: noteString
+          }, {
+            where: {
+              uuid: req.params.uuid
+            }
+          })
         return res.status(200).json({
           success: true,
-          note: noteModel.view()
+          result: 'Note Entry Updated'
         })
       } catch (error) {
         console.log(error)
         return res.status(401).json({
           success: false,
-          error: JSON.stringify(error)
+          result: JSON.stringify(error)
         }).end()
       }
     } else {
@@ -106,7 +110,7 @@ module.exports = {
       choosenNote.destroy()
       return res.status(200).json({
         success: true,
-        message: 'The Note has been deleted'
+        result: 'The Note has been deleted'
       })
     } catch (error) {
       console.log(error)

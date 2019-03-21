@@ -1,3 +1,31 @@
-<p>
-  list works!
-</p>
+<div class="col-md-6 user-container">
+  <h2 style="margin: auto">List of Notes</h2>
+  <button class="btn btn-danger" style="width:100px" (click)="addNote()"> Add Note</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>UUID</th>
+      <th>Text</th>
+      <th>Date Created</th>
+      <th>Date Updated</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--If no notes yet, show message instead of empty-->
+    <tr *ngFor="let note of notes">
+      <td>{{note.uuid}}</td>
+      <td>{{note.text}}</td>
+      <td>{{note.createdAt}}</td>
+      <td>{{note.updatedAt}}</td>
+      <td>
+        <button class="btn btn-success" (click)="deleteNote(note)">
+          Delete
+        </button>
+        <button class="btn btn-success" (click)="editNote(note)" style="margin-left: 20px;">
+          Edit
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

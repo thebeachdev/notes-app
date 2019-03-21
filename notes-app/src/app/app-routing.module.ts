@@ -12,19 +12,19 @@ const routes: Routes = [
     component: ListComponent
   },
   {
-    path: '/createNote',
+    path: 'createNote',
     component: CreateComponent
   },
   { // :UUID
-    path: '/destroyNote',
+    path: 'destroyNote',
     component: DestroyComponent
   },
   { // :UUID
-    path: '/viewNote',
+    path: 'viewNote',
     component: ViewComponent
   },
   { // :UUI
-    path: '/updateNote',
+    path: 'updateNote',
     component: UpdateComponent
   }
 ];
