@@ -19,8 +19,6 @@ router.post('/', create)
  * @api {get} /notes/:uuid Retrieve a Note's Profile.
  * @apiName RetrieveNote
  * @apiGroup Note
- * @apiPermission verifiedUser
- * @apiParam {String} access_token verifiedUser token.
  * @apiSuccess {Object} 200 Note's profile data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Notes not found.

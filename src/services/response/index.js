@@ -18,17 +18,6 @@ exports.errorHandler = (res, error) => (entity) => {
 
 }
 
-exports.authorOrAdmin = (res, user, userField) => (entity) => {
-  if (entity) {
-    const isAdmin = user.role === 'admin'
-    const isAuthor = entity[userField] && entity[userField].equals(user.id)
-    if (isAuthor || isAdmin) {
-      return entity
-    }
-    res.status(401).end()
-  }
-  return null
-}
 // NOTE: Could put error Handling in here too.
 // Utilty library.
 // NOTE: Could write tests aginst single unit functionality.
