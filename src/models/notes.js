@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Note.prototype.view = function (full) {
     let view = {}
-    let fields = ['uuid', 'text']
+    let fields = ['uuid', 'text', 'updatedAt', 'createdAt']
     fields.forEach((field) => {
       view[field] = this[field]
     })

@@ -1,0 +1,20 @@
+<div *ngIf="note">
+  <h1>Note Details</h1>
+  <div>
+    <span>
+      id:
+    </span>
+    {{note.uuid}}
+  </div>
+  <div>
+    <label>Note Stuff:</label>
+    <div>
+      {{note.text}}
+    </div>
+    <label>Created At:</label>
+    <div>{{note.createdAt}}</div>
+    <label>Updated At:</label>
+    <div>{{note.updatedAt}}</div>
+  </div>
+  <button (click)="goBack()"> Go Back </button>
+</div>

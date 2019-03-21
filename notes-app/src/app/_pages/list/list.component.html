@@ -18,6 +18,11 @@
       <td>{{note.createdAt}}</td>
       <td>{{note.updatedAt}}</td>
       <td>
+        <a routerLink="/detail/{{note.uuid}}">
+          <span> To Details</span>
+        </a>
+      </td>
+      <td>
         <button class="btn btn-success" (click)="deleteNote(note)">
           Delete
         </button>
