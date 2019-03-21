@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './_pages/list/list.component';
-import { HeaderComponent } from './_components/header/header.component';
 import { CreateComponent } from './_pages/create/create.component';
 import { UpdateComponent } from './_pages/update/update.component';
 import {ReactiveFormsModule} from "@angular/forms";
@@ -14,7 +13,6 @@ import {ReactiveFormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     ListComponent,
-    HeaderComponent,
     CreateComponent,
     UpdateComponent
   ],
