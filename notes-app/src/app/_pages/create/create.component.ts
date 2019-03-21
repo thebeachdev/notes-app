@@ -28,6 +28,9 @@ export class CreateComponent implements OnInit {
     this.noteService.createNote(this.addForm.value)
       .subscribe( data => {
         this.router.navigate([''])
-      })
+      },
+        error => {
+          alert(error.error.message);
+        })
   }
 }
