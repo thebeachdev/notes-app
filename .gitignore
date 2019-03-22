@@ -2,7 +2,6 @@
 public
 .tmp
 .idea
-dist
 /.nyc_output
 /coverage
 server/config/config.json
