@@ -5,9 +5,9 @@ See the API's [documentation](DOCS.md).
 
 # Getting Started
 
-- Navigate to the notes-app Angular-app. There you should build the project with `ng build`. Use watch to have live reload `ng build --watch`
-- The `/dist` will deposit into the nginx folder and be read by nginx when spinning up from the `docker-compose up` command.
-- next the only commands you need enter aftter that should be `docker-compose up`. It will build on the first time.
+- in the root of the project run `npm install` to build the node modules. A `dist/` file has been added to the nginx folder,
+ which contains the code from notes-app. you shouldn't have to build anything futher.
+- next the only commands you need enter aftter that should be `docker-compose up`. It will build and run the project.
 - Navigate to `localhost:80` on a chrome browser. 
 - Interact with project.
 - You should also be able to edit code and see it appear. 
