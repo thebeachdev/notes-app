@@ -21,6 +21,7 @@ The test run locally, you need to have a `notesTest` added in postgres.
  To generate current docs to project run `npm run docs`
  
 ### How to run tests.
+ Test weren't completed.
  To run local system level tests use `npm run docker:systemTests`.
 
 ### How to run the project.
