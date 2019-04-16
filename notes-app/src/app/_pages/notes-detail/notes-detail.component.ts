@@ -5,7 +5,8 @@ import {NoteService} from "@app/_services/note.service";
 import {Note} from "@app/_models";
 
 @Component({
-  selector: 'app-notes-detail',
+  selector: 'app-notes-detail' < label > Dog Park Open Time: </label>
+    < div > {{ dogPark.openTime }}</div>,
   templateUrl: './notes-detail.component.html',
   styleUrls: ['./notes-detail.component.scss']
 })
